@@ -1,7 +1,6 @@
 require "muzafar_palindrome/version"
 
-# Creating a module with functionality
-class String
+module MuzafarPalindrome
 
     # Returns true for a palindrome. False otherwise
     def palindrome?
@@ -13,6 +12,15 @@ class String
 
       # Processes content for a palindrome detection.
       def processed_content
-        scan(/[a-z]/i).join.downcase
+        to_s.scan(/[a-z\d]/i).join.downcase
       end
+end
+
+# Creating a module with functionality
+class String
+  include MuzafarPalindrome
+end
+
+class Integer
+  include MuzafarPalindrome
 end
