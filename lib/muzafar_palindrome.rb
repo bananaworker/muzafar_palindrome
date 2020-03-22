@@ -4,7 +4,11 @@ module MuzafarPalindrome
 
     # Returns true for a palindrome. False otherwise
     def palindrome?
-      processed_content == processed_content.reverse
+      if processed_content.strip.empty?
+        false
+      else
+        processed_content == processed_content.reverse
+      end
     end
 
     # Keeps the below functions private
