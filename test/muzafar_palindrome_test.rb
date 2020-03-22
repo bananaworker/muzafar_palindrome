@@ -2,6 +2,11 @@ require "test_helper"
 
 class MuzafarPalindromeTest < Minitest::Test
 
+
+  def test_empty_entry
+    refute "    ".palindrome?
+  end
+
   def test_non_palindrome
     refute "apple".palindrome?
   end
